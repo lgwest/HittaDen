@@ -6,13 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".HittaDen">
 
-    <TextView
+    <Button
+        android:id="@+id/NyKontroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="69dp"
+        android:onClick="onNyKontroll"
+        android:text="Ny kontroll"
+        app:layout_constraintBottom_toTopOf="@+id/KartSkala"
+        app:layout_constraintEnd_toEndOf="@+id/KartSkala"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/KartSkala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:onClick="onChangeMapScale"
+        android:text="ändra kartskala"
+        app:layout_constraintBottom_toTopOf="@+id/kartSkala"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NyKontroll" />
+
+    <TextView
+        android:id="@+id/kartSkala"
+        android:layout_width="74dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:text="1:10000"
+        app:layout_constraintBottom_toTopOf="@+id/Update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/KartSkala" />
+
+    <Button
+        android:id="@+id/Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="159dp"
+        android:onClick="onUppdatera"
+        android:text="Uppdatera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kartSkala" />
 </android.support.constraint.ConstraintLayout>
