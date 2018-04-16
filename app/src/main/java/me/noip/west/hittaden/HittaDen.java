@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class HittaDen extends Activity {
 
@@ -12,6 +12,18 @@ public class HittaDen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hitta_den);
+
+        int map_scale = MyPosition.mapScale;
+        TextView scale = findViewById(R.id.kartSkala);
+        scale.setText(Integer.toString(map_scale));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int map_scale = MyPosition.mapScale;
+        TextView scale = findViewById(R.id.kartSkala);
+        scale.setText(Integer.toString(map_scale));
     }
 
     public void onChangeMapScale(View view) {
@@ -27,4 +39,5 @@ public class HittaDen extends Activity {
         Intent intent = new Intent(this, Uppdatera.class);
         startActivity(intent);
     }
+
 }
