@@ -23,7 +23,7 @@ public class HittaDen extends Activity {
         super.onResume();
         int map_scale = MyPosition.mapScale;
         TextView scale = findViewById(R.id.kartSkala);
-        scale.setText(Integer.toString(map_scale));
+        scale.setText("1:" + Integer.toString(map_scale));
     }
 
     public void onChangeMapScale(View view) {
@@ -35,6 +35,7 @@ public class HittaDen extends Activity {
         Intent intent = new Intent(this, NyKontroll.class);
         startActivity(intent);
     }
+
     public void onUppdatera(View view) {
         Intent intent = new Intent(this, Uppdatera.class);
         startActivity(intent);
