@@ -65,32 +65,29 @@ public class Uppdatera extends Activity implements View.OnClickListener {
             Location location2 = locationManager.getLastKnownLocation(LocationManager. PASSIVE_PROVIDER);
 
             if (location != null) {
-                double latti = location.getLatitude();
+                double lati = location.getLatitude();
                 double longi = location.getLongitude();
-                latitude = String.valueOf(latti);
+                latitude = String.valueOf(lati);
                 longitude = String.valueOf(longi);
 
-                textView.setText("Your current location is"+ "\n" + "Lattitude = " + latitude
-                        + "\n" + "Longitude = " + longitude);
+                textView.setText("Lat: " + latitude + "Lon: " + longitude);
 
             } else  if (location1 != null) {
-                double latti = location1.getLatitude();
+                double lati = location1.getLatitude();
                 double longi = location1.getLongitude();
-                latitude = String.valueOf(latti);
+                latitude = String.valueOf(lati);
                 longitude = String.valueOf(longi);
 
-                textView.setText("Your current location is"+ "\n" + "Lattitude = " + latitude
-                        + "\n" + "Longitude = " + longitude);
+                textView.setText("Lat1: " + latitude + "Lon1: " + longitude);
 
 
             } else  if (location2 != null) {
-                double latti = location2.getLatitude();
+                double lati = location2.getLatitude();
                 double longi = location2.getLongitude();
-                latitude = String.valueOf(latti);
+                latitude = String.valueOf(lati);
                 longitude = String.valueOf(longi);
 
-                textView.setText("Your current location is"+ "\n" + "Lattitude = " + latitude
-                        + "\n" + "Longitude = " + longitude);
+                textView.setText("Lat2: " + latitude + "Lon2: " + longitude);
 
             }else{
 
