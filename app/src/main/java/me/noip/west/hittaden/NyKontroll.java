@@ -17,12 +17,16 @@ public class NyKontroll extends Activity {
     protected void onPause() {
 
         super.onPause();
+
         TextView myBearingEdit = findViewById(R.id.myBearing);
         String bearingTxt = myBearingEdit.getText().toString();
-        MyPosition.setMyBearing(Integer.parseInt(bearingTxt));
+        HittaDen.setTheBearing(Integer.parseInt(bearingTxt));
+
         TextView myDistanceEdit = findViewById(R.id.myDistance);
         String distanceTxt = myDistanceEdit.getText().toString();
-        MyPosition.setMyDistance(Integer.parseInt(distanceTxt));
+        HittaDen.setTheDistance(Integer.parseInt(distanceTxt));
+
+        HittaDen.nyKontroll = true;
     }
 
     public void onOk(View view) {

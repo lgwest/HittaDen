@@ -10,23 +10,22 @@
         android:id="@+id/NyKontroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginStart="19dp"
         android:onClick="onNyKontroll"
         android:text="Ny kontroll"
         app:layout_constraintBottom_toTopOf="@+id/KartSkala"
-        app:layout_constraintEnd_toEndOf="@+id/KartSkala"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/KartSkala"
+        app:layout_constraintTop_toBottomOf="@+id/kartSkala" />
 
     <Button
         android:id="@+id/KartSkala"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="17dp"
         android:onClick="onChangeMapScale"
         android:text="ändra kartskala"
-        app:layout_constraintBottom_toTopOf="@+id/kartSkala"
+        app:layout_constraintBottom_toTopOf="@+id/Update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NyKontroll" />
@@ -35,22 +34,34 @@
         android:id="@+id/kartSkala"
         android:layout_width="74dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
         android:text="@string/kart_skala"
-        app:layout_constraintBottom_toTopOf="@+id/Update"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/KartSkala" />
+        app:layout_constraintBottom_toTopOf="@+id/NyKontroll"
+        app:layout_constraintStart_toStartOf="@+id/NyKontroll"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="159dp"
+        android:layout_marginBottom="82dp"
+        android:layout_marginStart="20dp"
         android:onClick="onUppdatera"
         android:text="Uppdatera"
+        app:layout_constraintBottom_toTopOf="@+id/b_r_view"
+        app:layout_constraintStart_toStartOf="@+id/KartSkala"
+        app:layout_constraintTop_toBottomOf="@+id/KartSkala" />
+
+    <TextView
+        android:id="@+id/b_r_view"
+        android:layout_width="214dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="129dp"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kartSkala" />
+        app:layout_constraintTop_toBottomOf="@+id/Update" />
 </android.support.constraint.ConstraintLayout>

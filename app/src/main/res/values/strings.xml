@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Hitta Den</string>
-    <string name="kart_skala">1:7501</string>
+    <string name="kart_skala">1:10000</string>
 </resources>

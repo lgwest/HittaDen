@@ -6,38 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".KartSkala">
 
-    <TextView
-        android:id="@+id/textLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="99dp"
-        android:text="1:"
-        app:layout_constraintEnd_toStartOf="@+id/kartSkala"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="87dp"
-        android:onClick="onMapScaleOk"
-        android:text="Ok"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/kartSkala"
-        android:layout_width="0dp"
+        android:layout_width="82dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="142dp"
         android:ems="10"
         android:inputType="textPersonName|number"
         android:text="10000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textLabel" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
