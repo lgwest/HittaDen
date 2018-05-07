@@ -67,18 +67,23 @@ public class HittaDen extends Activity {
         } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             if (HittaDen.nyKontroll && HittaDen.theDistance_mm > 0) {
                 HittaDen.nyKontroll = false;
+                brView=findViewById(R.id.b_r_view);
                 double bearing = HittaDen.theBearing_deg * Math.PI / 180.0;
                 double distance = HittaDen.theDistance_mm * HittaDen.mapScale * 0.001;
+                brView.setText("distance:" + Double.toString(distance) + " meter");
                 Location myLocation = getLocation();
-                double lat1 = myLocation.getLatitude();
-                double lon1 = myLocation.getLongitude();
+                double lat1_deg = myLocation.getLatitude();
+                double lon1_deg = myLocation.getLongitude();
+                double lat1 = lat1_deg*Math.PI/180.0;
+                double lon1 = lon1_deg*Math.PI/180.0;
+                double d_R = distance/earthRadius;
 //            http://www.movable-type.co.uk/scripts/latlong.html
-                double lat2 = Math.asin(Math.sin(lat1) * Math.cos(distance / earthRadius) +
-                        Math.cos(lat1) * Math.sin(distance / earthRadius) * Math.cos(bearing));
-                double lon2 = lon1 + Math.atan2(Math.sin(bearing) * Math.sin(distance / earthRadius) * Math.cos(lat1),
-                        Math.cos(distance / earthRadius) - Math.sin(lat1) * Math.sin(lat2));
-                theLocation.setLatitude(lat2);
-                theLocation.setLongitude(lon2);
+                double lat2 = Math.asin(Math.sin(lat1) * Math.cos(d_R) +
+                        Math.cos(lat1) * Math.sin(d_R) * Math.cos(bearing));
+                double lon2 = lon1 + Math.atan2(Math.sin(bearing) * Math.sin(d_R) * Math.cos(lat1),
+                        Math.cos(d_R) - Math.sin(lat1) * Math.sin(lat2));
+                theLocation.setLatitude(lat2*180.0/Math.PI);
+                theLocation.setLongitude(lon2*180.0/Math.PI);
             }
         }
     }
@@ -102,11 +107,21 @@ public class HittaDen extends Activity {
 
 
             Location myLocation = getLocation();
+//            double lat = myLocation.getLatitude();
+//            double lon = myLocation.getLongitude();
+//            double lat2 = theLocation.getLatitude();
+//            double lon2 = theLocation.getLongitude();
+
             myLocation.distanceTo(theLocation);
             float bearing = myLocation.bearingTo(theLocation);
             float distance = myLocation.distanceTo(theLocation);
-            String b_r_txt = "Bäring: " + Float.toString(bearing) + " grader\n" +
-                    "Avstånd: " + Float.toString(distance) + " meter";
+            String bearing_str = String.format("%.0f", bearing);
+            String distance_str = String.format("%.0f", distance);
+            String b_r_txt =
+//                    "Lat: "+Double.toString(lat)+" lon: " + Double.toString(lon)+"\n"+
+//                    "Lat2: "+Double.toString(lat2)+" lon2: " + Double.toString(lon2)+"\n"+
+                    "Bäring: " + bearing_str + " grader\n" +
+                    "Avstånd: " + distance_str + " meter";
             brView.setText(b_r_txt);
         }
     }

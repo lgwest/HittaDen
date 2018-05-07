@@ -11,11 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
-        android:layout_marginStart="19dp"
+        android:layout_marginEnd="3dp"
         android:onClick="onNyKontroll"
         android:text="Ny kontroll"
         app:layout_constraintBottom_toTopOf="@+id/KartSkala"
-        app:layout_constraintStart_toStartOf="@+id/KartSkala"
+        app:layout_constraintEnd_toEndOf="@+id/kartSkala"
         app:layout_constraintTop_toBottomOf="@+id/kartSkala" />
 
     <Button
@@ -32,14 +32,14 @@
 
     <TextView
         android:id="@+id/kartSkala"
-        android:layout_width="74dp"
+        android:layout_width="113dp"
         android:layout_height="0dp"
         android:layout_marginBottom="9dp"
-        android:layout_marginStart="1dp"
         android:layout_marginTop="16dp"
         android:text="@string/kart_skala"
         app:layout_constraintBottom_toTopOf="@+id/NyKontroll"
-        app:layout_constraintStart_toStartOf="@+id/NyKontroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -56,9 +56,11 @@
 
     <TextView
         android:id="@+id/b_r_view"
-        android:layout_width="214dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="129dp"
+        android:layout_marginBottom="65dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
