@@ -114,6 +114,7 @@ public class HittaDen extends Activity {
 
             myLocation.distanceTo(theLocation);
             float bearing = myLocation.bearingTo(theLocation);
+            bearing = bearing<0? bearing+360:bearing;
             float distance = myLocation.distanceTo(theLocation);
             String bearing_str = String.format("%.0f", bearing);
             String distance_str = String.format("%.0f", distance);
